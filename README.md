@@ -44,7 +44,7 @@ Retrieve a list of character names translated to Spanish.
 /names
 ```
 ## Deployed:
- List of translated characters [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names).
+ List of translated characters [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names){:target="_blank"}.
 
 ### GET: List Translated Planets
 
@@ -53,7 +53,7 @@ Retrieve information about planets with details translated to Spanish.
 /planets
 ```
 ## Deployed:
- List of translated planets [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets).
+ List of translated planets [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets){:target="_blank"}.
 
 # Testing
 This template uses Jest (Typescript) to run its tests.
