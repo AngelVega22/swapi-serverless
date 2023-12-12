@@ -37,9 +37,9 @@ Test the service is up
 /healthcheck
 ```
 
-### GET: List Translated Names
+### GET: List Translated People
 
-Retrieve a list of character names translated to Spanish.
+Retrieve a list of character names translated to Spanish using https://swapi.py4e.com/api/people/?format=json endpoint.
 ```
 /names
 ```
@@ -48,7 +48,7 @@ Retrieve a list of character names translated to Spanish.
 
 ### GET: List Translated Planets
 
-Retrieve information about planets with details translated to Spanish.
+Retrieve information about planets with details translated to Spanish using https://swapi.py4e.com/api/planets/?format=json endpoint.
 ```
 /planets
 ```
