@@ -1,10 +1,4 @@
-# Serverless API: Typescript and Jest Template
-A Serverless API template using Typescript and Jest.
-
-This setup uses AWS as the provider. 
-
-To use your own provider, edit the `serverless.yml` as needed.
-The endpoint for the tests to run against will also need to be set to be more specific to your provider.
+# Serverless API: Typescript and Jest 
 
 ## Getting up and running
 First install `serverless` and get that up and running. documentation [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
@@ -20,12 +14,12 @@ npm install
 ## Deployment - Dev
 
 ```
-npm run deploy
+serverless deploy
 ```
 
 ## Deployment - Prod
 ```
-npm run deploy:prod
+serverless deploy:prod
 ```
 
 ## To remove:
@@ -42,6 +36,24 @@ Test the service is up
 ```
 /healthcheck
 ```
+
+### GET: List Translated Names
+
+Retrieve a list of character names translated to Spanish.
+```
+/names
+```
+##Deployed:
+ List of translated characters [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names).
+
+### GET: List Translated Planets
+
+Retrieve information about planets with details translated to Spanish.
+```
+/planets
+```
+##Deployed:
+ List of translated planets [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets).
 
 # Testing
 This template uses Jest (Typescript) to run its tests.

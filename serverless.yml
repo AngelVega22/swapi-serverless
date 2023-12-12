@@ -26,7 +26,7 @@ resources:
         Fn::Join:
           - ""
           - - "https://"
-            - Ref: ApiGatewayRestApi
+            - Ref: HttpApi
             - ".execute-api.${self:provider.region}.amazonaws.com/${self:provider.stage}"
   # iam:
   #     role:
@@ -52,6 +52,18 @@ functions:
               description: Names
             requestModels:
               application/json: GetDocumentRequest
+  listPlanets:
+      handler: src/functions/handlers.listPlanets
+      events:
+        - httpApi:
+            path: /planets
+            method: get
+            summary: List planets
+            description: List translated planets from swapi 'The Star Wars API'
+            requestBody:
+              description: planets
+            requestModels:
+              application/json: GetDocumentRequest              
   healthcheck:
     handler: src/functions/healthcheck.healthcheck
     description: Healthcheck to ensure the service is up
