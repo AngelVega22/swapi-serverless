@@ -39,7 +39,7 @@ Test the service is up
 
 ### GET: List Translated People
 
-Retrieve a list of character names translated to Spanish using https://swapi.py4e.com/api/people/?format=json endpoint.
+Retrieve a list of character names translated to Spanish using the [SWAPI People Endpoint](https://swapi.py4e.com/api/people/?format=json).
 ```
 /names
 ```
@@ -48,7 +48,7 @@ Retrieve a list of character names translated to Spanish using https://swapi.py4
 
 ### GET: List Translated Planets
 
-Retrieve information about planets with details translated to Spanish using https://swapi.py4e.com/api/planets/?format=json endpoint.
+Retrieve information about planets translated to Spanish using the  [SWAPI Planets Endpoint](https://swapi.py4e.com/api/planets/?format=json).
 ```
 /planets
 ```
