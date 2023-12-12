@@ -171,7 +171,6 @@ Copy and paste the following JSON object into the request body:
 ]
 ```
  
-
 # Testing
 run
 ```
@@ -183,3 +182,25 @@ npm run test
 ## Example test:
 ![test example](./screenshots/test_screenshot.png "test")
 
+## Checklist 
+- [x] Crear ima API en Node.js con el framework Serverless para un despliegue en AWS
+- [x] Adaptar y transformar los modelos de la API SWAPI a español.
+- [x] Integrar el API de prueba de STAR WARS, uno o más endpoints.
+- [x] Crear un modelo a mi eleccion mediente el uso de un endpoint POST y almacenar la data dentro de una base de datos.
+- [x] Crear un endpoint GET que muestre la data almacenada.
+
+## Puntos obligatorios
+- [x] Más de 2 endpoints GET y POST.
+- [x] Integración con DynamoDB.
+- [x] Integración con SWAPI.
+- [x] Traducción de atributos de ingles a español.
+- [x] Uso de Serverless Framework.
+- [x] Uso de Node.js.
+- [x] Respeto de las buenas prácticas de desarrollo.
+
+## Bonus
+- [x] Pruebas unitarias.
+- [x] Typescript.
+- [x] Documentación de uso.
+- [x] Desplegar sin errores en AWS con el comando deploy del framework serverless.
+ 
