@@ -1,4 +1,4 @@
-# Serverless API: Typescript and Jest 
+# Serverless API: Typescript, DynamoDB, Jest and SWAPI
 
 ## Getting up and running
 First install `serverless` and get that up and running. documentation [here](https://serverless.com/framework/docs/providers/aws/guide/quick-start/).
