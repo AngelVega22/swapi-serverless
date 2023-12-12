@@ -138,7 +138,7 @@ Retrieve information about planets translated to Spanish using the  [SWAPI Plane
 /car
 ```
 #### Deployed:
- CREATE [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/car).
+ <!-- CREATE [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/car). -->
 
 Copy and paste the following JSON object into the request body:
 ```json
