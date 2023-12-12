@@ -43,7 +43,7 @@ Retrieve a list of character names translated to Spanish.
 ```
 /names
 ```
-##Deployed:
+## Deployed:
  List of translated characters [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names).
 
 ### GET: List Translated Planets
@@ -52,7 +52,7 @@ Retrieve information about planets with details translated to Spanish.
 ```
 /planets
 ```
-##Deployed:
+## Deployed:
  List of translated planets [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets).
 
 # Testing
