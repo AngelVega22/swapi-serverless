@@ -36,6 +36,10 @@ Test the service is up
 ```
 /healthcheck
 ```
+#### Deployed:
+[healthcheck](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/healthcheck)
+
+# SWAPI integration
 
 ### GET: List Translated People
 
@@ -44,7 +48,44 @@ Retrieve a list of character names translated to Spanish using the [SWAPI People
 /names
 ```
 #### Deployed:
- List of translated characters [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names).
+ List of translated [characters](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/names).
+ ```json
+{
+  [
+    {
+      "nombre": "Luke Skywalker",
+      "altura": "172",
+      "masa": "77",
+      "color_del_cabello": "blond",
+      "color_de_piel": "fair",
+      "color_de_ojos": "blue",
+      "año_de_nacimiento": "19BBY",
+      "género": "male",
+      "planeta_natal": "https://swapi.py4e.com/api/planets/1/",
+      "películas": [
+        "https://swapi.py4e.com/api/films/1/",
+        "https://swapi.py4e.com/api/films/2/",
+        "https://swapi.py4e.com/api/films/3/",
+        "https://swapi.py4e.com/api/films/6/",
+        "https://swapi.py4e.com/api/films/7/"
+      ],
+      "especies": [
+        "https://swapi.py4e.com/api/species/1/"
+      ],
+      "vehículos": [
+        "https://swapi.py4e.com/api/vehicles/14/",
+        "https://swapi.py4e.com/api/vehicles/30/"
+      ],
+      "naves_estelares": [
+        "https://swapi.py4e.com/api/starships/12/",
+        "https://swapi.py4e.com/api/starships/22/"
+      ],
+      "creado": "2014-12-09T13:50:51.644000Z",
+      "editado": "2014-12-20T21:17:56.891000Z",
+      "URL": "https://swapi.py4e.com/api/people/1/"
+    },...
+``` 
+
 
 ### GET: List Translated Planets
 
@@ -53,7 +94,77 @@ Retrieve information about planets translated to Spanish using the  [SWAPI Plane
 /planets
 ```
 #### Deployed:
- List of translated planets [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets).
+ List of translated [planets](https://mwy9htpnok.execute-api.us-east-1.amazonaws.com/planets).
+
+```json
+{
+  [  
+    {
+      "nombre": "Tatooine",
+      "período de rotación": "23",
+      "período orbital": "304",
+      "diámetro": "10465",
+      "clima": "arid",
+      "gravedad": "1 standard",
+      "terreno": "desert",
+      "agua en la superficie": "1",
+      "población": "200000",
+      "residentes": [
+        "https://swapi.py4e.com/api/people/1/",
+        "https://swapi.py4e.com/api/people/2/",
+        "https://swapi.py4e.com/api/people/4/",
+        "https://swapi.py4e.com/api/people/6/",
+        "https://swapi.py4e.com/api/people/7/",
+        "https://swapi.py4e.com/api/people/8/",
+        "https://swapi.py4e.com/api/people/9/",
+        "https://swapi.py4e.com/api/people/11/",
+        "https://swapi.py4e.com/api/people/43/",
+        "https://swapi.py4e.com/api/people/62/"
+      ],
+      "URL": "https://swapi.py4e.com/api/planets/1/"
+    },...
+```
+
+# CRUD Operations
+
+### POST: Create car
+```
+/car
+```
+#### Deployed:
+ CREATE [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/car).
+
+Copy and paste the following JSON object into the request body:
+```json
+{
+    "name": "toyota",
+    "description" : "toyota car",
+    "brand" : "toyota",
+    "price": "10000",
+    "stock": 1
+}
+```
+
+### GET: Get cars
+```
+/carList
+```
+#### Deployed:
+ GET CARS [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/carList).
+
+```json
+[
+  {
+    "brand": "toyota",
+    "stock": 1,
+    "carID": "77b9a931-133c-4e33-82e0-fa41d8f1c337",
+    "description": "toyota car",
+    "price": "10000",
+    "name": "toyota"
+  }
+]
+```
+ 
 
 # Testing
 This template uses Jest (Typescript) to run its tests.

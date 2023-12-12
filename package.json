@@ -11,17 +11,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+JoshuaToth/serverless-api-typescript-template.git"
+    "url": "git+AngelVega22/swapi-serverless.git"
   },
-  "author": "Joshua Toth",
+  "author": "Angel Vega",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/JoshuaToth/serverless-api-typescript-template/issues"
-  },
-  "homepage": "https://github.com/JoshuaToth/serverless-api-typescript-template#readme",
   "dependencies": {
+    "aws-sdk": "^2.1517.0",
     "node-fetch": "^2.7.0",
-    "typescript": "^3.5.3"
+    "typescript": "^3.5.3",
+    "uuid": "^9.0.1",
+    "yup": "^1.3.2"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.130",
@@ -29,6 +28,7 @@
     "@types/jest": "^24.0.15",
     "@types/node": "^20.10.4",
     "@types/node-fetch": "^2.6.9",
+    "@types/uuid": "^9.0.7",
     "axios": "^0.19.0",
     "jest": "^24.8.0",
     "serverless-openapi-documentation": "^0.4.0",

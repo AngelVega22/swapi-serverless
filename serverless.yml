@@ -1,6 +1,6 @@
 # For full config options, check the docs:
 #    docs.serverless.com
-service: serverless-template 
+service: serverless-api-cars-swapi 
 
 plugins:
   - serverless-plugin-typescript
@@ -13,12 +13,38 @@ provider:
   stage: ${opt:stage, 'dev'}
   region: us-east-1
 
+  iam:
+      role:
+        statements:
+          - Effect: Allow
+            Action:
+              - "dynamodb:PutItem"
+              - "dynamodb:GetItem"
+              - "dynamodb:DeleteItem"
+              - "dynamodb:Scan"
+            Resource:
+              - { "Fn::GetAtt": ["CarsTable", "Arn"] }  
+
 custom:
   stage: ${opt:stage, 'dev'}
   output:
     file: .serverless/output.json
 
 resources:
+  Resources:
+      CarsTable:
+        Type: AWS::DynamoDB::Table
+        Properties:
+          TableName: CarsTable
+          ProvisionedThroughput:
+            ReadCapacityUnits: 1
+            WriteCapacityUnits: 1
+          AttributeDefinitions:
+            - AttributeName: carID
+              AttributeType: S
+          KeySchema:
+            - AttributeName: carID
+              KeyType: HASH
   Outputs:
     ApiUrl:
       Description: "The API Gateway URL"
@@ -28,17 +54,6 @@ resources:
           - - "https://"
             - Ref: HttpApi
             - ".execute-api.${self:provider.region}.amazonaws.com/${self:provider.stage}"
-  # iam:
-  #     role:
-  #       statements:
-  #         - Effect: Allow
-  #           Action:
-  #             - "dynamodb:PutItem"
-  #             - "dynamodb:GetItem"
-  #             - "dynamodb:DeleteItem"
-  #             - "dynamodb:Scan"
-  #           Resource:
-  #             - { "Fn::GetAtt": ["NamesTable", "Arn"] }
 functions:
   listNames:
       handler: src/functions/handlers.listNames
@@ -46,28 +61,28 @@ functions:
         - httpApi:
             path: /names
             method: get
-            summary: List Names
-            description: List translated names from swapi 'The Star Wars API'
-            requestBody:
-              description: Names
-            requestModels:
-              application/json: GetDocumentRequest
   listPlanets:
       handler: src/functions/handlers.listPlanets
       events:
         - httpApi:
             path: /planets
-            method: get
-            summary: List planets
-            description: List translated planets from swapi 'The Star Wars API'
-            requestBody:
-              description: planets
-            requestModels:
-              application/json: GetDocumentRequest              
+            method: get         
   healthcheck:
-    handler: src/functions/healthcheck.healthcheck
-    description: Healthcheck to ensure the service is up
-    events:
-      - http:
-          path: /healthcheck
-          method: get
+      handler: src/functions/healthcheck.healthcheck
+      description: Healthcheck to ensure the service is up
+      events:
+        - httpApi:
+            path: /healthcheck
+            method: get
+  createCar:
+      handler: src/functions/handlers.createCar       
+      events:
+        - httpApi:
+            path: /car
+            method: post     
+  getAllCars:
+      handler: src/functions/handlers.getAllCars       
+      events:
+        - httpApi:
+            path: /carList
+            method: get   
