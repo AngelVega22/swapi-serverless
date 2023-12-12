@@ -178,7 +178,7 @@ run
 npm run test
 ```
 ### Test results:
-![test example](./screenshots/tests_screenshot.png "test")
+![test example](./screenshots/test_results_screenshot.png "test")
 
 ## Example test:
 ![test example](./screenshots/test_screenshot.png "test")
