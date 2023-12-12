@@ -83,7 +83,10 @@ Retrieve a list of character names translated to Spanish using the [SWAPI People
       "creado": "2014-12-09T13:50:51.644000Z",
       "editado": "2014-12-20T21:17:56.891000Z",
       "URL": "https://swapi.py4e.com/api/people/1/"
-    }...
+    },
+    ...
+  ]
+}
 ``` 
 
 
@@ -122,7 +125,10 @@ Retrieve information about planets translated to Spanish using the  [SWAPI Plane
         "https://swapi.py4e.com/api/people/62/"
       ],
       "URL": "https://swapi.py4e.com/api/planets/1/"
-    }...
+    },
+    ...
+  ]
+}
 ```
 
 # CRUD Operations
