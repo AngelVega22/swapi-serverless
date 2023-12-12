@@ -1,0 +1,61 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+service: serverless-template 
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-stack-output
+  - serverless-openapi-documentation
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+
+custom:
+  stage: ${opt:stage, 'dev'}
+  output:
+    file: .serverless/output.json
+
+resources:
+  Outputs:
+    ApiUrl:
+      Description: "The API Gateway URL"
+      Value:
+        Fn::Join:
+          - ""
+          - - "https://"
+            - Ref: ApiGatewayRestApi
+            - ".execute-api.${self:provider.region}.amazonaws.com/${self:provider.stage}"
+  # iam:
+  #     role:
+  #       statements:
+  #         - Effect: Allow
+  #           Action:
+  #             - "dynamodb:PutItem"
+  #             - "dynamodb:GetItem"
+  #             - "dynamodb:DeleteItem"
+  #             - "dynamodb:Scan"
+  #           Resource:
+  #             - { "Fn::GetAtt": ["NamesTable", "Arn"] }
+functions:
+  listNames:
+      handler: src/functions/handlers.listNames
+      events:
+        - httpApi:
+            path: /names
+            method: get
+            summary: List Names
+            description: List translated names from swapi 'The Star Wars API'
+            requestBody:
+              description: Names
+            requestModels:
+              application/json: GetDocumentRequest
+  healthcheck:
+    handler: src/functions/healthcheck.healthcheck
+    description: Healthcheck to ensure the service is up
+    events:
+      - http:
+          path: /healthcheck
+          method: get
