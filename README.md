@@ -138,7 +138,7 @@ Retrieve information about planets translated to Spanish using the  [SWAPI Plane
 /car
 ```
 #### Deployed:
- <!-- CREATE [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/car). -->
+ CREATE [endpoint](https://c04nvk5s5e.execute-api.us-east-1.amazonaws.com/car).
 
 Copy and paste the following JSON object into the request body:
 ```json
@@ -173,12 +173,13 @@ Copy and paste the following JSON object into the request body:
  
 
 # Testing
-This template uses Jest (Typescript) to run its tests.
-
-To test, first deploy the application to your desired AWS stack.
-Then run
+run
 ```
 npm run test
 ```
+### Test results:
+![test example](./screenshots/tests_screenshot.png "test")
 
-This will use the generated API url to automatically test the application.
+## Example test:
+![test example](./screenshots/test_screenshot.png "test")
+
